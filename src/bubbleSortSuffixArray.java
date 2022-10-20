@@ -18,7 +18,7 @@ public class bubbleSortSuffixArray {
         String[] Final = new String[Input.length()];
         String temp = Input;
         for(int i= 0;i<Input.length();i++){
-            temp = Input.substring(i, Input.length());
+            temp = Input.substring(i);
             Final[i]=temp;
         }
         return Final;

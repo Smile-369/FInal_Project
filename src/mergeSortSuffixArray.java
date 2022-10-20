@@ -1,12 +1,21 @@
 import java.util.Arrays;
-
+/*
+* mergeSortSuffixArray serves as a suffix array creation using mergesort
+* */
 public class mergeSortSuffixArray {
 
     public static void main(String[] args) {
       printSuffixArray();
     }
+    /*
+    * This method works as a way to print out a suffix array, and applies the following methods
+    *  createRandomString, suffixArrayCreation,and mergeSort
+    * */
     static void printSuffixArray(){
         int n= 128*(int) Math.pow(2,8);
+            /*
+            sets n to 128 *2^n
+            * */
         String Input=createRandomString(n);
         String[] Sorted=suffixArrayCreation(Input);
         String[] temp = Sorted.clone();
@@ -15,11 +24,12 @@ public class mergeSortSuffixArray {
         int[] Index2=Index(Sorted,temp);
         System.out.println(Arrays.toString(Index2));
     }
+
     static String[] suffixArrayCreation(String Input){
         String[] Final = new String[Input.length()];
         String temp = Input;
         for(int i= 0;i<Input.length();i++){
-            temp = Input.substring(i, Input.length());
+            temp = Input.substring(i);
             Final[i]=temp;
         }
         return Final;
